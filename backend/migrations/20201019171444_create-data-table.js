@@ -3,6 +3,7 @@ module.exports.up = function (knex) {
     .createTable("users", (tbl) => {
       tbl.increments();
       tbl.string("username", 128).notNullable().unique();
+      tbl.string("password", 128).notNullable();
     })
     .createTable("todolist", (tbl) => {
       tbl.increments();
